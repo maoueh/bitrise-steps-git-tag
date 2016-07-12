@@ -4,7 +4,7 @@ if [ -n "${push}" -a "${push}" == "true" -o "${push}" == "false" ]
 then
     git tag -a ${tag} -m '${tag_message}'
     if [ "${push}" == "true" ]; then
-        git push --follow-tags
+        git push origin ${tag}
     fi
     if (( $? )); then
         echo "Failure" >&2
